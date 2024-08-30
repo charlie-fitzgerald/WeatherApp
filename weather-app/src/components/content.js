@@ -1,24 +1,26 @@
 import React from 'react'
 
 export default function Content() {
-    const [zipCode, setZipCode] = React.useState(90210)
+    const [state, setState] = React.useState("")
 
-    const handleChange = userInput => {
-        setZipCode(userInput)
+    const handleChange = event => {
+        setState(event.target.value)
     }
 
-    return (
+    return ( 
         <div>
-            <h1>Enter your Zip Code for local weather data</h1>
+            <h1>Enter Text</h1>
             <br />
             <form>
                 <input 
                     type="text"
-                    placeholder="Enter ZIP"
+                    placeholder="Enter Text"
                     onChange={handleChange}
                 />
+                <input type="submit"/>
             </form>
             <br />
+            <h1>{state}</h1>
         </div>      
         
         
